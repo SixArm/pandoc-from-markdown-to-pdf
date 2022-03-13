@@ -14,8 +14,9 @@ pandoc \
     -V fontsize=12pt \
     --pdf-engine=xelatex \
     --highlight-style="$DIR0/pygments.theme" \
-    --include-in-header="$DIR0/chapters.tex" \
-    --include-in-header="$DIR0/bullets.tex" \
+    --include-in-header="$DIR0/chapter.tex" \
+    --include-in-header="$DIR0/blockquote.tex" \
+    --include-in-header="$DIR0/bullet.tex" \
     --include-in-header="$DIR0/inline_code.tex" \
     --toc \
     --toc-depth=1 \

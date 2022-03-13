@@ -1,11 +1,22 @@
 #!/bin/sh
 
+# Thanks to https://learnbyexample.github.io/customizing-pandoc/
+
+DIR0=$(dirname $0)
+
 pandoc \
     -f gfm \
     -V linkcolor:blue \
     -V geometry:a4paper \
     -V geometry:margin=2cm \
-    -V mainfont="DejaVu Sans" \
+    -V mainfont="Georgia" \
     -V monofont="DejaVu Sans Mono" \
+    -V fontsize=12pt \
     --pdf-engine=xelatex \
+    --highlight-style="$DIR0/pygments.theme" \
+    --include-in-header="$DIR0/chapters.tex" \
+    --include-in-header="$DIR0/bullets.tex" \
+    --include-in-header="$DIR0/inline_code.tex" \
+    --toc \
+    --toc-depth=1 \
    "$@" 

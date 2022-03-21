@@ -1,6 +1,42 @@
 #!/bin/sh
 
+# pandoc-from-markdown-into-pdf-with-favorites
+#
+# Convert from a markdown file into a PDF file.
+#
 # Thanks to https://learnbyexample.github.io/customizing-pandoc/
+#
+#
+# ## Prerequisites
+#
+# This script requires pandoc and pdflatex to be installed.
+#
+#
+# ### macOS install
+#
+# Example using brew:
+#
+# ```sh
+# brew install pandoc
+# brew install mactex
+# ```
+#
+# Verify the programs are runnable:
+#
+# ```sh
+# $ which pandoc
+# /usr/local/bin/pandoc
+#
+# $ pandoc --version
+# pandoc 2.17.1.1
+#
+# $ which pdflatex
+# /Library/TeX/texbin/pdflatex
+#
+# $ pdflatex --version
+# pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021)
+# ```
+
 
 DIR0=$(dirname $0)
 
@@ -8,16 +44,20 @@ pandoc \
     -f gfm \
     -V linkcolor:blue \
     -V geometry:a4paper \
-    -V geometry:margin=2cm \
+    -V geometry:margin=2.5cm \
     -V mainfont="Georgia" \
     -V monofont="DejaVu Sans Mono" \
     -V fontsize=12pt \
-    --pdf-engine=xelatex \
     --highlight-style="$DIR0/pygments.theme" \
+    --pdf-engine=pdflatex \
     --include-in-header="$DIR0/chapter.tex" \
     --include-in-header="$DIR0/blockquote.tex" \
     --include-in-header="$DIR0/bullet.tex" \
     --include-in-header="$DIR0/inline_code.tex" \
     --toc \
-    --toc-depth=1 \
+    --toc-depth=2 \
    "$@" 
+
+# Unused:
+#    --listings -H "$DIR0/listings-setup.tex" \
+#     --pdf-engine=xelatex \

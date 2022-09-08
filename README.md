@@ -94,3 +94,14 @@ https://github.com/sixarm/pandoc-from-markdown-to-pdf
 Thanks to https://learnbyexample.github.io/customizing-pandoc/
 
 Thanks to https://github.com/sixarm/sixarm-unix-shell-functions/
+
+
+## Tracking
+
+  * Package: pandoc-from-markdown-to-pdf
+  * Version: 1.0.0
+  * Created: 2022-03-12T22:05:34Z
+  * Updated: 2022-09-08T21:42:49Z
+  * License: GPL-2.0-or-later or contact us for custom license
+  * Contact: Joel Parker Henderson (joel@sixarm.com)
+  

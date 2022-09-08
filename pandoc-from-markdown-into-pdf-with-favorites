@@ -36,6 +36,62 @@
 # $ xelatex --version
 # XeTeX 3.141592653-2.6-0.999993 (TeX Live 2021)
 # ```
+#
+#
+# ## Fonts
+#
+# This script prefers Bitstream Vera fonts because they
+# are widely available with a good license for this work.
+#
+#   * main font: Bitstream Vera Sans
+#
+#   * code font: Bitstream Vera Sans Mono
+#
+# We have tried various ways to install fonts.
+#
+#   * Run `brew install --cask font-*`` (works for general use but pandoc can't find these fonts)
+#
+#   * download a font file to directory `~/.fonts` (works for `fc-list` but pandoc can't find these fonts)
+#
+#   * download a font file and install it via macOS "Font Book" app.
+#
+#
+# ### Install a font via macOS + download + Font Book
+#
+#   1. Download a font file
+#
+#   2. Launch the macOS app "Font Book"
+#
+#   3. Use the app to add the font.
+#
+#
+# ### Install a font via macOS + brew
+#
+# ```sh
+# brew install --cask font-bitstream-vera
+# ```
+#
+#
+# ### Install a font via download and directory
+#
+#   1. Download a font file `.ttf`.
+#
+#   2. Put the file into an expected directory such as `~/.fonts`.
+#
+#   3. Refresh the font cache by running `sudo fc-cache -fv`.
+#
+#   4. Confirm the font has been loaded by running `fc-list | grep ExampleFontName`
+#
+#   5. Add the mainfont variable to the Pandoc command: `-V mainfont="ExampleFontName"`.
+#
+# 
+# ### List fonts
+#
+# To list the xelatex fonts that are usable:
+#
+# ```sh
+# $ fc-list
+# ````
 
 # sixarm-unix-shell-functions
 # https://github.com/SixArm/sixarm-unix-shell-functions
@@ -54,10 +110,22 @@ cmd_or_die() {
         cmd "$1" || die "$EX_UNAVAILABLE" "Command needed: $1"
 }
 
+font_exists() {
+        fc-list | grep -q ": $1:"
+}
+
+font_exists_or_die() {
+        font_exists "$1" || die "$EX_UNAVAILABLE" "Font needed: $1"
+}
+
 # Preflight
 
 cmd_or_die "pandoc"
 cmd_or_die "xelatex"
+
+font_exists_or_die "Bitstream Vera Serif"
+font_exists_or_die "Bitstream Vera Sans"
+font_exists_or_die "Bitstream Vera Sans Mono"
 
 # Main
 
@@ -68,8 +136,9 @@ pandoc \
     -V linkcolor:blue \
     -V geometry:a4paper \
     -V geometry:margin=2.5cm \
-    -V mainfont="Georgia" \
-    -V monofont="DejaVu Sans Mono" \
+    -V mainfont="Bitstream Vera Serif" \
+    -V sansfont="Bitstream Vera Sans" \
+    -V monofont="Bitstream Vera Sans Mono" \
     -V fontsize=12pt \
     --highlight-style="$DIR0/pygments.theme" \
     --pdf-engine=xelatex \

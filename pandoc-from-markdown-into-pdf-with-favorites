@@ -2,9 +2,7 @@
 
 # pandoc-from-markdown-into-pdf-with-favorites
 #
-# Convert from a markdown file into a PDF file.
-#
-# Thanks to https://learnbyexample.github.io/customizing-pandoc/
+# Use the pandoc command to convert from a markdown file into a PDF file.
 #
 #
 # ## Prerequisites
@@ -38,60 +36,28 @@
 # ```
 #
 #
-# ## Fonts
+# ## Help
 #
-# This script prefers Bitstream Vera fonts because they
-# are widely available with a good license for this work.
+# This script uses Bitstream Vera fonts because they are
+# widely available, and use a fair license for this work.
 #
-#   * main font: Bitstream Vera Sans
+#   * main font: Bitstream Vera Serif
+#
+#   * sans font: Bitstream Vera Sans
 #
 #   * code font: Bitstream Vera Sans Mono
 #
-# We have tried various ways to install fonts.
+# For help with fonts, see the `fonts` directory:
 #
-#   * Run `brew install --cask font-*`` (works for general use but pandoc can't find these fonts)
-#
-#   * download a font file to directory `~/.fonts` (works for `fc-list` but pandoc can't find these fonts)
-#
-#   * download a font file and install it via macOS "Font Book" app.
+# https://github.com/sixarm/pandoc-from-markdown-into-pdf
 #
 #
-# ### Install a font via macOS + download + Font Book
+# ## Thanks
 #
-#   1. Download a font file
+# Thanks to https://learnbyexample.github.io/customizing-pandoc/
 #
-#   2. Launch the macOS app "Font Book"
+# Thanks to https://github.com/sixarm/sixarm-unix-shell-functions/
 #
-#   3. Use the app to add the font.
-#
-#
-# ### Install a font via macOS + brew
-#
-# ```sh
-# brew install --cask font-bitstream-vera
-# ```
-#
-#
-# ### Install a font via download and directory
-#
-#   1. Download a font file `.ttf`.
-#
-#   2. Put the file into an expected directory such as `~/.fonts`.
-#
-#   3. Refresh the font cache by running `sudo fc-cache -fv`.
-#
-#   4. Confirm the font has been loaded by running `fc-list | grep ExampleFontName`
-#
-#   5. Add the mainfont variable to the Pandoc command: `-V mainfont="ExampleFontName"`.
-#
-# 
-# ### List fonts
-#
-# To list the xelatex fonts that are usable:
-#
-# ```sh
-# $ fc-list
-# ````
 
 # sixarm-unix-shell-functions
 # https://github.com/SixArm/sixarm-unix-shell-functions
@@ -142,10 +108,10 @@ pandoc \
     -V fontsize=12pt \
     --highlight-style="$DIR0/pygments.theme" \
     --pdf-engine=xelatex \
-    --include-in-header="$DIR0/chapter.tex" \
-    --include-in-header="$DIR0/blockquote.tex" \
-    --include-in-header="$DIR0/bullet.tex" \
-    --include-in-header="$DIR0/inline_code.tex" \
+    --include-in-header="$DIR0/tex/chapter.tex" \
+    --include-in-header="$DIR0/tex/blockquote.tex" \
+    --include-in-header="$DIR0/tex/bullet.tex" \
+    --include-in-header="$DIR0/tex/inline_code.tex" \
     --toc \
     --toc-depth=2 \
    "$@" 

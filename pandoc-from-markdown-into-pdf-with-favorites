@@ -1,13 +1,36 @@
 #!/bin/sh
 
-# pandoc-from-markdown-into-pdf-with-favorites
+# pandoc-from-markdown-to-pdf
 #
-# Use the pandoc command to convert from a markdown file into a PDF file.
+# Use the pandoc command to convert from a markdown file to a PDF file.
+#
+# This tool uses our favorite settings. Customize these as you like.
+#
+#
+# ## Availability
+#
+# This tool is currently tested on macOS Monterey.
+#
+# If you want to use this tool on other systems,
+# then please contact us, or open an issue, to let us know.
 #
 #
 # ## Prerequisites
 #
 # This script requires pandoc and xelatex to be installed.
+#
+# This script requires these prerequisites to be installed:
+#
+#   * pandoc document converter
+#
+#   * xelatex implementation of LaTex converters
+#
+#   * pygments syntax highlighting
+#
+#   * Bitstream Vera fonts
+# 
+# If you want a different choices for any of the above,
+# then please contact us or open an issue, to let us know.
 #
 #
 # ### macOS install
@@ -49,7 +72,7 @@
 #
 # For help with fonts, see the `fonts` directory:
 #
-# https://github.com/sixarm/pandoc-from-markdown-into-pdf
+# https://github.com/sixarm/pandoc-from-markdown-to-pdf
 #
 #
 # ## Thanks
@@ -59,7 +82,7 @@
 # Thanks to https://github.com/sixarm/sixarm-unix-shell-functions/
 #
 
-# sixarm-unix-shell-functions
+# This section is code from sixarm-unix-shell-functions:
 # https://github.com/SixArm/sixarm-unix-shell-functions
 
 EX_UNAVAILABLE=69
@@ -115,6 +138,3 @@ pandoc \
     --toc \
     --toc-depth=2 \
    "$@" 
-
-# Unused:
-#    --listings -H "$DIR0/listings-setup.tex" \

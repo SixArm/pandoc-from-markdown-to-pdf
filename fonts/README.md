@@ -1,7 +1,7 @@
 # Fonts
 
 This script uses Bitstream Vera fonts because they are
-widely available and use a fair license for this work.
+widely available, and use a fair license for this work.
 
   * main font: Bitstream Vera Serif
 

@@ -4,6 +4,24 @@ Use the pandoc command to convert from a markdown file to a PDF file.
 
 This tool uses our favorite settings. Customize these as you like.
 
+Syntax:
+
+```sh
+pandoc-from-markdown-to-pdf <args>
+```
+
+Syntax for typical use:
+
+```sh
+pandoc-from-markdown-to-pdf <input.md> -o <output.pdf>
+```
+
+Example:
+
+```sh
+$ pandoc-from-markdown-to-pdf example.md -o example.pdf
+```
+
 
 # Availability
 

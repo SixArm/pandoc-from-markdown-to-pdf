@@ -2,8 +2,9 @@
 
 Use the pandoc command to convert from a markdown file to a PDF file.
 
-This tool uses our favorite settings for layouts, styles, fonts, 
-quotes, inlines, bullets, etc. You can edit this tool as you wish.
+This tool uses our favorite settings for layouts, styles, fonts, etc.
+
+You can edit this tool as you wish.
 
 Syntax:
 

@@ -25,6 +25,17 @@ $ pandoc-from-markdown-to-pdf example.md -o example.pdf
 ```
 
 
+# Install
+
+Clone this repo to anywhere you want, and add it to your path, such as:
+
+```sh
+cd $HOME
+git clone https://github.com/SixArm/pandoc-from-markdown-to-pdf.git
+export PATH="$PATH:$HOME/pandoc-from-markdown-to-pdf"
+```
+
+
 # Availability
 
 This tool is currently tested on macOS Monterey.

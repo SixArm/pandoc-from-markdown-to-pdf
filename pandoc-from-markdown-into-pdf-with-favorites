@@ -37,6 +37,29 @@
 # XeTeX 3.141592653-2.6-0.999993 (TeX Live 2021)
 # ```
 
+# sixarm-unix-shell-functions
+# https://github.com/SixArm/sixarm-unix-shell-functions
+
+EX_UNAVAILABLE=69
+
+die() {
+        n="$1" ; shift ; >&2 printf %s\\n "$*" ; exit "$n"
+}
+
+cmd() {
+        command -v "$1" >/dev/null 2>&1
+}
+
+cmd_or_die() {
+        cmd "$1" || die "$EX_UNAVAILABLE" "Command needed: $1"
+}
+
+# Preflight
+
+cmd_or_die "pandoc"
+cmd_or_die "xelatex"
+
+# Main
 
 DIR0=$(dirname $0)
 

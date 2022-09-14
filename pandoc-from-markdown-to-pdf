@@ -167,6 +167,7 @@ pandoc \
     --include-in-header="$DIR0/tex/bullet.tex" \
     --include-in-header="$DIR0/tex/hyphen.tex" \
     --include-in-header="$DIR0/tex/inline_code.tex" \
+    --include-in-header="$DIR0/tex/raggedright.tex" \
     --toc \
     --toc-depth=2 \
    "$@" 

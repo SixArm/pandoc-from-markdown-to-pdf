@@ -66,7 +66,31 @@ Example using brew:
 
 ```sh
 brew install pandoc
+```
+
+If you prefer a heavyweight install:
+
+```sh
 brew install mactex
+```
+
+If you prefer a lightweight install:
+
+```sh
+brew install basictex
+eval "$(/usr/libexec/path_helper)"
+# Update $PATH to include `/usr/local/texlive/2022basic/bin/universal-darwin`
+sudo tlmgr update --self
+sudo tlmgr install texliveonfly
+sudo tlmgr install adjustbox
+sudo tlmgr install tcolorbox
+sudo tlmgr install collectbox
+sudo tlmgr install ucs
+sudo tlmgr install environ
+sudo tlmgr install trimspaces
+sudo tlmgr install titling
+sudo tlmgr install enumitem
+sudo tlmgr install rsfs
 ```
 
 Verify the programs are runnable:
@@ -84,6 +108,29 @@ $ which xelatex
 $ xelatex --version
 XeTeX 3.141592653-2.6-0.999993 (TeX Live 2021)
 ```
+
+## Troubleshooting
+
+If the `xelatex` command is not found, then look for it:
+
+```sh
+find / -name xelatex
+```
+
+Example result on macOS after brew install:
+
+```sh
+/Library/TeX/texbin/xelatex
+```
+
+Then add xelatex to your path:
+
+```sh
+export PATH="$PATH:/Library/TeX/texbin/xelatex"
+```
+
+If that works, then adjust your path as you wish, such as in your `.env` file, or `~/.zshenv` file, etc.
+
 
 ## Fonts
 
@@ -111,9 +158,9 @@ Thanks to https://github.com/sixarm/sixarm-unix-shell-functions/
 ## Tracking
 
   * Package: pandoc-from-markdown-to-pdf
-  * Version: 1.0.0
+  * Version: 1.0.1
   * Created: 2022-03-12T22:05:34Z
-  * Updated: 2022-09-08T21:42:49Z
-  * License: GPL-2.0-or-later or contact us for custom license
+  * Updated: 2023-03-15T18:08:35Z
+  * License: GPL-2.0 or GPL-3.0 or contact us for more
   * Contact: Joel Parker Henderson (joel@sixarm.com)
   

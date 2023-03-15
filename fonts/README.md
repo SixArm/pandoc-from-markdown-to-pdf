@@ -1,13 +1,48 @@
 # Fonts
 
-This script uses Bitstream Vera fonts because they are
-widely available, and use a fair license for this work.
+
+## Font families: Bitstream Vera and Source Pro
+
+This script repository has two font families,
+and you can use these, or choose your own fonts.
+
+
+### Bitstream Vera 
+
+Bitstream Vera fonts are widely available, and use a fair license for this work.
 
   * main font: Bitstream Vera Serif
 
   * sans font: Bitstream Vera Sans
 
   * code font: Bitstream Vera Sans Mono
+
+If you want to try macOS brew install:
+
+```sh
+brew install --cask font-bitstream-vera-serif
+brew install --cask font-bitstream-vera-sans
+brew install --cask font-bitstream-vera-sans-mono
+```
+
+
+### Source Pro
+
+Source Pro fonts by Adobe are widely available, and use a fair license for this work.
+
+  * main font: Source Serif Pro
+
+  * sans font: Source Sans Pro
+
+  * code font: Source Code Pro
+
+If you want to try macOS brew install:
+
+```sh
+brew install --cask font-source-serif-pro
+brew install --cask font-source-sans-pro
+brew install --cask font-source-code-pro
+```
 
 
 ## Install a font
@@ -38,10 +73,16 @@ In our experience, this way doesn't work reliably.
 
 We explain it here, in case someone can help solve it.
 
+Commands we try:
+
 ```sh
 brew install --cask font-bitstream-vera-serif
 brew install --cask font-bitstream-vera-sans
 brew install --cask font-bitstream-vera-sans-mono
+
+brew install --cask font-source-serif-pro
+brew install --cask font-source-sans-pro
+brew install --cask font-source-code-pro
 ```
 
 In practice, the fonts sometimes are not packaged in the brew repo.

@@ -109,7 +109,7 @@ $ xelatex --version
 XeTeX 3.141592653-2.6-0.999993 (TeX Live 2021)
 ```
 
-## Troubleshooting
+## Troubleshooting xelatex
 
 If the `xelatex` command is not found, then look for it:
 
@@ -134,18 +134,7 @@ If that works, then adjust your path as you wish, such as in your `.env` file, o
 
 ## Fonts
 
-This script uses Bitstream Vera fonts because they are
-widely available, and use a fair license for this work.
-
-  * main font: Bitstream Vera Serif
-
-  * sans font: Bitstream Vera Sans
-
-  * code font: Bitstream Vera Sans Mono
-
-For help with fonts, see the `fonts` directory:
-
-https://github.com/sixarm/pandoc-from-markdown-to-pdf
+For help with fonts, see the `fonts` directory.
 
 
 ## Thanks
@@ -158,7 +147,7 @@ Thanks to https://github.com/sixarm/sixarm-unix-shell-functions/
 ## Tracking
 
   * Package: pandoc-from-markdown-to-pdf
-  * Version: 1.0.1
+  * Version: 1.1.0
   * Created: 2022-03-12T22:05:34Z
   * Updated: 2023-03-15T18:08:35Z
   * License: GPL-2.0 or GPL-3.0 or contact us for more

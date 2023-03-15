@@ -38,7 +38,7 @@ export PATH="$PATH:$HOME/pandoc-from-markdown-to-pdf"
 
 # Availability
 
-This tool is currently tested on macOS Monterey.
+This tool is currently tested on macOS Ventura.
 
 If you want to use this tool on other systems,
 then please contact us, or open an issue, to let us know.
@@ -162,5 +162,6 @@ Thanks to https://github.com/sixarm/sixarm-unix-shell-functions/
   * Created: 2022-03-12T22:05:34Z
   * Updated: 2023-03-15T18:08:35Z
   * License: GPL-2.0 or GPL-3.0 or contact us for more
+  * Website: https://github.com/sixarm/pandoc-from-markdown-to-pdf
   * Contact: Joel Parker Henderson (joel@sixarm.com)
   

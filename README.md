@@ -109,6 +109,7 @@ $ xelatex --version
 XeTeX 3.141592653-2.6-0.999993 (TeX Live 2021)
 ```
 
+
 ## Troubleshooting xelatex
 
 If the `xelatex` command is not found, then look for it:
@@ -123,10 +124,10 @@ Example result on macOS after brew install:
 /Library/TeX/texbin/xelatex
 ```
 
-Then add xelatex to your path:
+Then add the xelatex directory to your path:
 
 ```sh
-export PATH="$PATH:/Library/TeX/texbin/xelatex"
+export PATH="$PATH:/Library/TeX/texbin"
 ```
 
 If that works, then adjust your path as you wish, such as in your `.env` file, or `~/.zshenv` file, etc.

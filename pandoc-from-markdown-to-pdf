@@ -161,7 +161,7 @@
 # This section is code from sixarm-unix-shell-functions:
 # https://github.com/SixArm/sixarm-unix-shell-functions
 
-EX_UNAVAILABLE=69
+EXIT_UNAVAILABLE=69
 
 die() {
         n="$1" ; shift ; >&2 printf %s\\n "$*" ; exit "$n"
@@ -172,7 +172,7 @@ cmd() {
 }
 
 cmd_or_die() {
-        cmd "$1" || die "$EX_UNAVAILABLE" "Command needed: $1"
+        cmd "$1" || die "$EXIT_UNAVAILABLE" "Command needed: $1"
 }
 
 font_exists() {
@@ -180,7 +180,7 @@ font_exists() {
 }
 
 font_exists_or_die() {
-        font_exists "$1" || die "$EX_UNAVAILABLE" "Font needed: $1"
+        font_exists "$1" || die "$EXIT_UNAVAILABLE" "Font needed: $1"
 }
 
 # Preflight
@@ -188,31 +188,60 @@ font_exists_or_die() {
 cmd_or_die "pandoc"
 cmd_or_die "xelatex"
 
-font_exists_or_die "Bitstream Vera Serif"
-font_exists_or_die "Bitstream Vera Sans"
-font_exists_or_die "Bitstream Vera Sans Mono"
+# Choose fonts
+
+# font_exists_or_die "Bitstream Vera Serif"
+# font_exists_or_die "Bitstream Vera Sans"
+# font_exists_or_die "Bitstream Vera Sans Mono"
+
+# mainfont="Bitstream Vera Serif"
+# sansfont="Bitstream Vera Sans"
+# monofont="Bitstream Vera Sans Mono"
+
+font_exists_or_die "Source Serif Pro"
+font_exists_or_die "Source Sans Pro"
+font_exists_or_die "Source Code Pro"
+
+mainfont="Source Serif Pro"
+sansfont="Source Sans Pro"
+monofont="Source Code Pro"
 
 # Main
 
 DIR0=$(dirname "$0")
 
 pandoc \
-    -f gfm \
     -V linkcolor:blue \
     -V geometry:a4paper \
     -V geometry:margin=2.5cm \
-    -V mainfont="Bitstream Vera Serif" \
-    -V sansfont="Bitstream Vera Sans" \
-    -V monofont="Bitstream Vera Sans Mono" \
+    -V mainfont="$mainfont" \
+    -V sansfont="$sansfont" \
+    -V monofont="$monofont" \
     -V fontsize=12pt \
-    --highlight-style="$DIR0/pygments.theme" \
+    --listings \
+    --toc \
+    --toc-depth=2 \
     --pdf-engine=xelatex \
     --include-in-header="$DIR0/tex/chapter.tex" \
     --include-in-header="$DIR0/tex/blockquote.tex" \
     --include-in-header="$DIR0/tex/bullet.tex" \
+    --include-in-header="$DIR0/tex/fontspec.tex" \
     --include-in-header="$DIR0/tex/hyphen.tex" \
     --include-in-header="$DIR0/tex/inline_code.tex" \
+    --include-in-header="$DIR0/tex/listings.tex" \
+    --include-in-header="$DIR0/tex/setspace.tex" \
     --include-in-header="$DIR0/tex/raggedright.tex" \
-    --toc \
-    --toc-depth=2 \
    "$@" 
+
+# Other ideas to consider:
+#
+#     -f gfm \
+#     --highlight-style="$DIR0/pygments.theme" \
+#     --template eisvogel_mod
+#     --columns=50
+#     --number-sections
+#     --pdf-engine lualatex
+#     --dpi=300 -M 
+#     date="$DATE" 
+#     HEADER.YAML 
+#     $SOURCE.md

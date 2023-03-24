@@ -1,7 +1,7 @@
 # Fonts
 
 
-## Font families: Bitstream Vera and Source Pro
+## Font families: Bitstream Vera and Adobe Source Pro
 
 This script repository has two font families,
 and you can use these, or choose your own fonts.
@@ -17,32 +17,16 @@ Bitstream Vera fonts are widely available, and use a fair license for this work.
 
   * code font: Bitstream Vera Sans Mono
 
-If you want to try macOS brew install:
 
-```sh
-brew install --cask font-bitstream-vera-serif
-brew install --cask font-bitstream-vera-sans
-brew install --cask font-bitstream-vera-sans-mono
-```
+### Adobe Source Pro
 
-
-### Source Pro
-
-Source Pro fonts by Adobe are widely available, and use a fair license for this work.
+Adobe Source Pro fonts are widely available, and use a fair license for this work.
 
   * main font: Source Serif Pro
 
   * sans font: Source Sans Pro
 
   * code font: Source Code Pro
-
-If you want to try macOS brew install:
-
-```sh
-brew install --cask font-source-serif-pro
-brew install --cask font-source-sans-pro
-brew install --cask font-source-code-pro
-```
 
 
 ## Install a font

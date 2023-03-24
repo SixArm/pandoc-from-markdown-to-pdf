@@ -31,7 +31,7 @@ For documentation, see the `doc` directory.
 
 Thanks to https://learnbyexample.github.io/customizing-pandoc/
 
-Thanks to https://github.com/sixarm/sixarm-unix-shell-functions/
+Thanks to https://github.com/sixarm/posix-shell-script-kit/
 
 
 ## Tracking

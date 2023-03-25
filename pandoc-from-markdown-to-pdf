@@ -80,8 +80,8 @@ DIR0=$(dirname "$0")
 
 pandoc \
     -V linkcolor:blue \
-    -V geometry:a4paper \
-    -V geometry:margin=2.5cm \
+    -V geometry:b5paper \
+    -V geometry:margin=2cm \
     -V mainfont="$mainfont" \
     -V sansfont="$sansfont" \
     -V monofont="$monofont" \

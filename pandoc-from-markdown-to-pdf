@@ -58,21 +58,20 @@ command_exists_or_die "xelatex"
 
 # Choose fonts
 
-# font_name_exists_or_die "Bitstream Vera Serif"
-# font_name_exists_or_die "Bitstream Vera Sans"
-# font_name_exists_or_die "Bitstream Vera Sans Mono"
-
 # mainfont="Bitstream Vera Serif"
 # sansfont="Bitstream Vera Sans"
 # monofont="Bitstream Vera Sans Mono"
-
-font_name_exists_or_die "Source Serif Pro"
-font_name_exists_or_die "Source Sans Pro"
-font_name_exists_or_die "Source Code Pro"
+# mathfont="Bitstream Vera Sans Mono"
 
 mainfont="Source Serif Pro"
 sansfont="Source Sans Pro"
 monofont="Source Code Pro"
+mathfont="Source Code Pro"
+
+font_name_exists_or_die "$mainfont"
+font_name_exists_or_die "$sansfont"
+font_name_exists_or_die "$monofont"
+font_name_exists_or_die "$mathfont"
 
 # Main
 
@@ -85,6 +84,7 @@ pandoc \
     -V mainfont="$mainfont" \
     -V sansfont="$sansfont" \
     -V monofont="$monofont" \
+    -V mathfont="$mathfont" \
     -V fontsize=12pt \
     --listings \
     --toc \

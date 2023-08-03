@@ -37,9 +37,9 @@ Thanks to https://github.com/sixarm/posix-shell-script-kit/
 ## Tracking
 
   * Package: pandoc-from-markdown-to-pdf
-  * Version: 2.0.1
+  * Version: 2.1.1
   * Created: 2022-03-12T22:05:34Z
-  * Updated: 2023-03-24T13:10:38Z
+  * Updated: 2023-08-03T09:44:27Z
   * License: GPL-2.0 or GPL-3.0 or contact us for more
   * Website: https://github.com/sixarm/pandoc-from-markdown-to-pdf
   * Contact: Joel Parker Henderson (joel@sixarm.com)

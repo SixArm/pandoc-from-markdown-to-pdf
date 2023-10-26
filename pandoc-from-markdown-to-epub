@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# pandoc-from-markdown-to-pdf
+# pandoc-from-markdown-to-epub
 #
-# Use the pandoc command to convert from a markdown file to a PDF file.
+# Use the pandoc command to convert from a markdown file to a EPUB file.
 #
 # This tool uses our favorite settings for layouts, styles, fonts, etc.
 #
@@ -11,19 +11,19 @@
 # Syntax:
 #
 # ```sh
-# pandoc-from-markdown-to-pdf <args>
+# pandoc-from-markdown-to-epub <args>
 # ```
 #
 # Syntax for typical use:
 #
 # ```sh
-# pandoc-from-markdown-to-pdf <input.md> -o <output.pdf>
+# pandoc-from-markdown-to-epub <input.md> -o <output.epub>
 # ```
 #
 # Example for typical use:
 #
 # ```sh
-# $ pandoc-from-markdown-to-pdf example.md -o example.pdf
+# $ pandoc-from-markdown-to-epub example.md -o example.epub
 # ```
 #
 # For documentation, see the `doc` directory.
@@ -38,12 +38,12 @@
 #
 # ## Tracking
 #
-# * Command: pandoc-from-markdown-to-pdf
+# * Command: pandoc-from-markdown-to-epub
 # * Version: 2.0.1
 # * Created: 2022-03-13T22:05:34Z
 # * Updated: 2023-03-24T13:10:38Z
 # * License: GPL-2.0 or GPL-3.0 or contact us for more
-# * Website: https://github.com/sixarm/pandoc-from-markdown-to-pdf
+# * Website: https://github.com/sixarm/pandoc-from-markdown-to-epub
 # * Contact: Joel Parker Henderson (joel@sixarm.com)
 
 set -euf
@@ -78,7 +78,7 @@ font_name_exists_or_die "$mathfont"
 DIR0=$(dirname "$0")
 
 pandoc \
-    --pdf-engine=xelatex \
+    -t epub \
     -V linkcolor:blue \
     -V geometry:b5paper \
     -V geometry:margin=2cm \
@@ -108,7 +108,7 @@ pandoc \
 #     --template eisvogel_mod
 #     --columns=50
 #     --number-sections
-#     --pdf-engine lualatex
+#     --epub-engine lualatex
 #     --dpi=300 -M 
 #     date="$DATE" 
 #     HEADER.YAML 

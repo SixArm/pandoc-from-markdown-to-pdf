@@ -78,7 +78,6 @@ font_name_exists_or_die "$mathfont"
 DIR0=$(dirname "$0")
 
 pandoc \
-    --pdf-engine=xelatex \
     -V linkcolor:blue \
     -V geometry:b5paper \
     -V geometry:margin=2cm \
@@ -87,6 +86,7 @@ pandoc \
     -V monofont="$monofont" \
     -V mathfont="$mathfont" \
     -V fontsize=12pt \
+    --pdf-engine=xelatex \
     --listings \
     --toc \
     --toc-depth=2 \

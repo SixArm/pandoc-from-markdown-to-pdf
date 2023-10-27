@@ -58,11 +58,6 @@ command_exists_or_die "xelatex"
 
 # Choose fonts
 
-# mainfont="Bitstream Vera Serif"
-# sansfont="Bitstream Vera Sans"
-# monofont="Bitstream Vera Sans Mono"
-# mathfont="Bitstream Vera Sans Mono"
-
 mainfont="Source Serif Pro"
 sansfont="Source Sans Pro"
 monofont="Source Code Pro"

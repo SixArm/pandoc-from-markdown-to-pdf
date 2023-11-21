@@ -39,9 +39,9 @@
 # ## Tracking
 #
 # * Command: pandoc-from-markdown-to-pdf
-# * Version: 2.0.1
+# * Version: 2.2.0
 # * Created: 2022-03-13T22:05:34Z
-# * Updated: 2023-03-24T13:10:38Z
+# * Updated: 2023-11-21T21:29:57Z
 # * License: GPL-2.0 or GPL-3.0 or contact us for more
 # * Website: https://github.com/sixarm/pandoc-from-markdown-to-pdf
 # * Contact: Joel Parker Henderson (joel@sixarm.com)

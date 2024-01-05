@@ -85,13 +85,13 @@ pandoc \
     --listings \
     --toc \
     --toc-depth=2 \
-    --include-in-header="$DIR0/tex/chapter.tex" \
     --include-in-header="$DIR0/tex/blockquote.tex" \
     --include-in-header="$DIR0/tex/bullet.tex" \
     --include-in-header="$DIR0/tex/fontspec.tex" \
     --include-in-header="$DIR0/tex/hyphen.tex" \
     --include-in-header="$DIR0/tex/inline_code.tex" \
     --include-in-header="$DIR0/tex/listings.tex" \
+    --include-in-header="$DIR0/tex/sectionstyle.tex" \
     --include-in-header="$DIR0/tex/setspace.tex" \
     --include-in-header="$DIR0/tex/raggedright.tex" \
    "$@" 

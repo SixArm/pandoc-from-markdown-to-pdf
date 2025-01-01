@@ -13,10 +13,10 @@ Example result on macOS after brew install:
 /Library/TeX/texbin/xelatex
 ```
 
-Then add xelatex to your path:
+Example to append the directory to your path:
 
 ```sh
-export PATH="$PATH:/Library/TeX/texbin/xelatex"
+export PATH="$PATH:/Library/TeX/texbin"
 ```
 
 If that works, then adjust your path as you wish, such as in your `.env` file, or `~/.zshenv` file, etc.
